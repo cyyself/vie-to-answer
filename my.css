@@ -1,0 +1,55 @@
+/*
+	Tianhai Information Technology
+		http://tianhai.info/
+*/
+*{
+	font-family:"Myriad Set Pro","Lucida Grande","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti,"Microsoft YaHei Light","Microsoft YaHei","Segoe UI",Segoe,Arial,sans-serif;
+}
+body {
+	text-align:center;
+	margin:0px auto;
+}
+table {
+	margin:0px auto;
+}
+.palette {
+	font-size: 14px;
+	line-height: 1.214;
+	color: #ffffff;
+	margin: 0;
+	padding: 15px;
+}
+.palette dt,
+.palette dd {
+	line-height: 1.429;
+}
+.palette dt {
+	display: block;
+	font-weight: bold;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.palette dd {
+	font-weight: 300;
+	margin-left: 0;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+.palette-pomegranate {
+	background-color: #c0392b;
+}
+.palette-river {
+	background-color: #0071c1;
+}
+.palette-emerland {
+	background-color: #2ecc71;
+}
+.logo-text {
+	font-family:'Conv_OCRAStd',Sans-Serif;
+	font-size: 64px;
+}
+#showResult {
+	word-wrap: break-word;
+	font-size: 64px;
+}

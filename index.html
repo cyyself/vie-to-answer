@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>云抢答系统</title>
+		<link rel="stylesheet" href="my.css">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/pure/1.0.0/pure-min.css">
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+		function onload(){
+			$("#name").val(window.localStorage.getItem('qd-name'));
+			$("#pwd").val(window.localStorage.getItem('qd-pwd'));
+		}
+		</script>
+	</head>
+	<body onload="onload()">
+		<h1>云抢答系统</h1>
+		<div class="palette palette-river">
+			注意事项：<br />
+			1. 请尽量使用3G/4G网络，经测试3G网络抢答速度与4G几乎没有差别，请勿使用拥挤的Wi-Fi进行抢答。<br />
+			2. 请尽量使用手机自带浏览器，如iPhone使用Safari，切勿使用QQ内置浏览器和带云加速功能的浏览器。<br />
+		</div>
+		<div class="pure-form">
+			<p id="ping">正在测试延迟</p>
+			<center><fieldset>
+				<input type="text" id="name" placeholder="你的名字"/>
+				<br />
+				<input type="password" id="pwd" placeholder="你的密码"/>
+				<br />
+				<button id="but0">抢答</button>
+				<button id="but1">验证</button>
+			</fieldset></center>
+		</div>
+		<br>
+		<a href="https://github.com/cyyself/vie-to-answer">vie-to-answer</a>
+		<br>
+		Made with ❤️ by <a href="https://cyyself.name">cyy</a>
+		<script src="func-user.js"></script>
+	</body>
+</html>
+
