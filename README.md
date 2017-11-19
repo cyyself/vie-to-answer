@@ -3,7 +3,7 @@
 
 使用该系统你需要一台电脑作为服务器和显示屏，然后让参与者的手机连接到这台电脑上，访问对应的地址进入抢答。
 
-你同样可以将这个系统的服务端部署在服务器上（建议多线BGP机房，然后参与者使用手机LTE网路）。
+你同样可以将这个系统的服务端部署在服务器上（建议多线BGP机房，然后参与者使用手机LTE网络）。
 
 用户界面：`index.html`
 
@@ -27,6 +27,7 @@ server {
     listen [::]:80;
     server_name qiangda.example.com;
     root /var/www/vie-to-answer;
+    index index.html;
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
         fastcgi_pass unix:/run/php/php7.0-fpm.sock;
