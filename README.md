@@ -12,7 +12,7 @@
 初始管理员用户名和密码均为admin
 
 
-在Debian 9上安装：
+## 在Debian 9上安装：
 ```
 sudo su
 cd /var/www/
