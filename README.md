@@ -12,11 +12,13 @@
 
 在Debian 9上安装：
 ```
+sudo su
 cd /var/www/
 git clone https://github.com/cyyself/vie-to-answer.git
 apt install nginx php7.0-common php7.0-fpm php7.0-cli php7.0-json
 cd vie-to-answer
 php init.php
+chown www-data:www-data /var/www/vie-to-answer/ -R
 ```
 nginx配置文件：
 ```
