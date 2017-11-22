@@ -1,4 +1,4 @@
-var WaitingNewQiangda = false;
+var QiangdaRunning = false;
 $("#but0").click(function() {
 	$("#Delay").val(Number($("#Delay").val()));
 	$("#TimeOut").val(Number($("#TimeOut").val()));
@@ -21,9 +21,9 @@ $("#but0").click(function() {
 				}
 				setTimeout("$(\"#showResult\").html(\"开始抢答！\")",1000*delay);
 				setTimeout("$(\"#but0\").attr(\"disabled\",false)",1000*delay);
-				WaitingNewQiangda = true;
-				setTimeout("WaitingNewQiangda = false;",1000*delay+500);
-				setTimeout("getresult()",1000*delay+1000);
+				QiangdaRunning = false;
+				setTimeout("QiangdaRunning = true;",1000*delay+500);
+				setTimeout("getresult()",1000*delay+500);
 			}
 			else {
 				alert(data.msg);
@@ -38,7 +38,7 @@ $("#but0").click(function() {
 	});
 });
 function getresult() {
-	if (!WaitingNewQiangda) {
+	if (QiangdaRunning) {
 		$.ajax({
 			type: 'GET',
 			url: 'showresult.php',
@@ -52,6 +52,7 @@ function getresult() {
 				}
 				else {
 					alert("抢答已结束！");
+					QiangdaRunning = false;
 				}
 			},
 			error: function() {
@@ -59,4 +60,5 @@ function getresult() {
 			}
 		});
 	}
+	setTimeout("getresult()",500);
 }
