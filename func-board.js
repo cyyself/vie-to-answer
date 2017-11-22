@@ -47,7 +47,6 @@ function getresult() {
 			success: function(data) {
 				if (data.s == 1) {
 					$("#showResult").html(data.html);
-					setTimeout("getresult()",500);
 					if (data.html == "") $("#showResult").html("开始抢答！");
 				}
 				else {
