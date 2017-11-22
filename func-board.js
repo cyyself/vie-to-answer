@@ -23,7 +23,6 @@ $("#but0").click(function() {
 				setTimeout("$(\"#but0\").attr(\"disabled\",false)",1000*delay);
 				QiangdaRunning = false;
 				setTimeout("QiangdaRunning = true;",1000*delay+500);
-				setTimeout("getresult()",1000*delay+500);
 			}
 			else {
 				alert(data.msg);
@@ -61,3 +60,4 @@ function getresult() {
 	}
 	setTimeout("getresult()",500);
 }
+getresult();
