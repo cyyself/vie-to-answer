@@ -1,3 +1,4 @@
+var WaitingNewQiangda = false;
 $("#but0").click(function() {
 	$("#Delay").val(Number($("#Delay").val()));
 	$("#TimeOut").val(Number($("#TimeOut").val()));
@@ -20,6 +21,8 @@ $("#but0").click(function() {
 				}
 				setTimeout("$(\"#showResult\").html(\"开始抢答！\")",1000*delay);
 				setTimeout("$(\"#but0\").attr(\"disabled\",false)",1000*delay);
+				WaitingNewQiangda = true;
+				setTimeout("WaitingNewQiangda = false;",1000*delay);
 				setTimeout("getresult()",1000*delay+500);
 			}
 			else {
@@ -47,7 +50,7 @@ function getresult() {
 				if (data.html == "") $("#showResult").html("开始抢答！");
 			}
 			else {
-				alert("抢答已结束！");
+				if (!WaitingNewQiangda) alert("抢答已结束！");
 			}
 		},
 		error: function() {
