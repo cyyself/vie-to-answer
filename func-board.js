@@ -38,23 +38,25 @@ $("#but0").click(function() {
 	});
 });
 function getresult() {
-	$.ajax({
-		type: 'GET',
-		url: 'showresult.php',
-		timeout : 3000,
-		dataType: 'json',
-		success: function(data) {
-			if (data.s == 1) {
-				$("#showResult").html(data.html);
-				if (!WaitingNewQiangda) setTimeout("getresult()",500);
-				if (data.html == "") $("#showResult").html("开始抢答！");
+	if (!WaitingNewQiangda) {
+		$.ajax({
+			type: 'GET',
+			url: 'showresult.php',
+			timeout : 3000,
+			dataType: 'json',
+			success: function(data) {
+				if (data.s == 1) {
+					$("#showResult").html(data.html);
+					setTimeout("getresult()",500);
+					if (data.html == "") $("#showResult").html("开始抢答！");
+				}
+				else {
+					alert("抢答已结束！");
+				}
+			},
+			error: function() {
+				$("#showResult").html("请求异常");
 			}
-			else {
-				if (!WaitingNewQiangda) alert("抢答已结束！");
-			}
-		},
-		error: function() {
-			$("#showResult").html("请求异常");
-		}
-	});
+		});
+	}
 }
