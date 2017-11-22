@@ -22,8 +22,8 @@ $("#but0").click(function() {
 				setTimeout("$(\"#showResult\").html(\"开始抢答！\")",1000*delay);
 				setTimeout("$(\"#but0\").attr(\"disabled\",false)",1000*delay);
 				WaitingNewQiangda = true;
-				setTimeout("WaitingNewQiangda = false;",1000*delay);
-				setTimeout("getresult()",1000*delay+500);
+				setTimeout("WaitingNewQiangda = false;",1000*delay+500);
+				setTimeout("getresult()",1000*delay+1000);
 			}
 			else {
 				alert(data.msg);
