@@ -40,7 +40,8 @@ table {
 	background-color: #c0392b;
 }
 .palette-river {
-	background-color: #0071c1;
+	  background-image: url(b.png);
+	  background-size:100%
 }
 .palette-emerland {
 	background-color: #2ecc71;
