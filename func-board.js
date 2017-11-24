@@ -31,7 +31,7 @@ $("#but0").click(function() {
 		},
 		dataType: 'json',
 		error: function() {
-			alert('请求异常！');
+			alert("请求异常，请检查网络连接。");
 			$("#but0").html("开始");
 		}
 	});
@@ -49,12 +49,13 @@ function getresult() {
 					if (data.html == "") $("#showResult").html("开始抢答！");
 				}
 				else {
+					$("#showResult").html(data.html);
 					alert("抢答已结束！");
 					QiangdaRunning = false;
 				}
 			},
 			error: function() {
-				$("#showResult").html("请求异常");
+				$("#showResult").html("请求异常，请检查网络连接！");
 			}
 		});
 	}
