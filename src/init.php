@@ -5,7 +5,7 @@
 	if (is_cli()) {
 		$config = array(
 			'adminuser'=>'admin',
-			'adminpass'=>md5('admin'),
+			'adminpass'=>md5('adminSAWSdocker'),
 			'user'=>array(
 				'user1'=>'123456',
 				'user2'=>'123456'

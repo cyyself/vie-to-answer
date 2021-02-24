@@ -23,6 +23,7 @@ cd /var/www/
 git clone https://github.com/cyyself/vie-to-answer.git
 apt install nginx php7.0-common php7.0-fpm php7.0-cli php7.0-json
 cd vie-to-answer
+mv src/* .
 php init.php
 chown www-data:www-data /var/www/vie-to-answer/ -R
 # 如果出现一点击“新建抢答”就提示抢答结束的情况多半是没有执行chown
@@ -43,4 +44,10 @@ server {
         deny all;
     }
 }
+```
+
+## 使用Docker
+```
+docker build -t vie-to-answer .
+docker run --init -d -p 80:80  --name vie-to-answer vie-to-answer
 ```
